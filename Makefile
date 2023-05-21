@@ -44,6 +44,6 @@ deps.linux.amd64:
 .PHONY: deps.windows.amd64
 deps.windows.amd64:
 	if [ "$(shell uname -s | tr '[:upper:]' '[:lower:]')" != "linux" ]; then echo "Error: must run build on linux"; false; fi
-	x86_64-w64-mingw32-g++ -O3 -DGODUCKDB_FROM_SOURCE -DDUCKDB_BUILD_LIBRARY -std=c++11 -static-libstdc++ -static-libgcc -m64 "-Wa,-mbig-obj" -c duckdb.cpp -o duckdb.o
+	x86_64-w64-mingw32-g++ -std=c++11 -O3 -DGODUCKDB_FROM_SOURCE -DDUCKDB_BUILD_LIBRARY -static-libstdc++ -static-libgcc -m64 "-Wa,-mbig-obj" -c duckdb.cpp -o duckdb.o
 	x86_64-w64-mingw32-ar crs libduckdb.a duckdb.o
 	mv libduckdb.a deps/windows_amd64/libduckdb.a
