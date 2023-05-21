@@ -22,6 +22,8 @@ jobs:
         with:
           platform: x64
       - shell: bash
+        run: x86_64-w64-mingw32-g++ --version
+      - shell: bash
         run: make deps.windows.amd64
       - uses: actions/upload-artifact@v3
         with:
