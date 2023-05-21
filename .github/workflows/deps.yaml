@@ -25,7 +25,7 @@ jobs:
         run: |
           x86_64-w64-mingw32-g++ --version
           x86_64-w64-mingw32-g++ -Og -std=c++11 -DGODUCKDB_FROM_SOURCE -static-libstdc++ -static-libgcc -m64 "-Wa,-mbig-obj" -c duckdb.cpp -o duckdb.o
-	        x86_64-w64-mingw32-ar crs libduckdb.a duckdb.o
+          x86_64-w64-mingw32-ar crs libduckdb.a duckdb.o
           ls -alh
       - uses: actions/upload-artifact@v3
         with:
